@@ -1,4 +1,4 @@
-# $EconoME 
+# EconoME
 
 ## Projeto para treinar HTML / CSS / JS
 
