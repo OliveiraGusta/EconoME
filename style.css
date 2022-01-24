@@ -13,6 +13,18 @@ body{
     background:#f0f2f5;
     font-family: 'Montserrat', sans-serif;
 }
+.sr-only{ /*Esconder elementos na tela sem prejudicar a leitura de softwares de acessibilidade*/
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nownap ;
+    border-width: 0;
+}
+
 
 .container{
     width: min(90Vw, 800px);
@@ -71,6 +83,9 @@ header{
     font-weight: normal;
     font-size: 1rem;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card p {
