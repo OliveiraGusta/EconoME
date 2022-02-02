@@ -4,6 +4,7 @@
     --green: #49AA26;
     --light-green: #3dd705;
     --red: #e92929;
+    --white: #f0f2f5;
 }
 *{
     margin: 0;
@@ -14,7 +15,7 @@ html{
     font-size:93.75%; /*15px*/
 }
 body{
-    background:#f0f2f5;
+    background:var(--white);
     font-family: 'Montserrat', sans-serif;
 }
 .sr-only{ /*Hide elements on screen for people with accessibility software*/
@@ -77,7 +78,7 @@ button:hover{
 }
 .botton.new{
     display: inline-block;
-    margin-bottom: .8rem;
+    margin-bottom: 0.8rem;
 }
 
 .button.cancel{
@@ -85,13 +86,17 @@ button:hover{
     border: 2px var(--red) solid;
     border-radius: 0.25rem;
 
-    height: 50px;
+    height: 50px; 
+    background:var(--white);
+    ;
 
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+
     opacity: 0.6;
 }
+
 .button.cancel:hover{
     opacity:1;
 }
@@ -222,6 +227,8 @@ td.expense{
 
     opacity: 0;
     visibility: hidden;
+
+    z-index: 9999;
 }
 
 .modal-overlay.active{
@@ -230,10 +237,13 @@ td.expense{
 }
 
 .modal{
-    background: #f0f2f5;
+    background:var(--white);
     padding: 2.4rem;
     width: 90%;
     max-width: 500px;
+
+    position: relative;
+    z-index: 1;
 
     
 }
