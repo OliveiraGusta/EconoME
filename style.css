@@ -243,10 +243,9 @@ td.expense{
     max-width: 500px;
 
     position: relative;
-    z-index: 1;
-
-    
+    z-index: 1;   
 }
+
 /* Forma ................*/
 #form{
     max-width: 500px;
@@ -287,13 +286,39 @@ input{
 }
 
 
+
+
 /* Footer ................*/
 footer{
-    text-align: center;
-    padding: 4rem 0 2rem;
-    font-weight: bold;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+
+}
+
+.icon-hover:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    transition: all .2500s ease-in-out; 
+}
+
+.econome-nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: var(--dark-blue);
-    opacity: 0.6;
+}
+
+.econome-contact-container{
+    display: flex;
+    align-items:center;
+}
+
+.econome-contact-link{
+    margin: 5px 10px 0 10px;
+    font-size: 1rem;
+    color: var(--dark-blue);
 }
 
 
