@@ -18,6 +18,7 @@ html{
 body{
     background:var(--white);
     font-family: 'Montserrat', sans-serif;
+    
 }
 .sr-only{ /*Hide elements on screen for people with accessibility software*/
     position: absolute;
@@ -69,6 +70,7 @@ button{
     border-radius: 0.25rem;
     
     cursor: pointer;
+   
 }
 
 
@@ -76,19 +78,21 @@ button:hover{
     background: var(--light-green);
 
 }
-.botton.new{
+.botton.add{
     display: inline-block;
     margin-bottom: 0.8rem;
 }
 
 .button.cancel{
+
+
     color: var(--red);
     border: 2px var(--red) solid;
     border-radius: 0.25rem;
 
     height: 50px; 
     background:var(--white);
-    ;
+    
 
     display: flex;
     align-items: center;
@@ -96,10 +100,9 @@ button:hover{
 
     opacity: 0.6;
 }
-
 .button.cancel:hover{
-    opacity:1;
-}
+    opacity: 1;
+    }
 
 
 /* Header ................*/
@@ -160,12 +163,14 @@ header{
 #transaction{
     display: block;
     overflow-x: auto;
+    
 }
 #data-table{
     
     width: 100%;
     border-spacing: 0 0.5rem;
     color: #969cb3;
+    overflow-y:hidden
 
    
 }
@@ -294,14 +299,20 @@ footer{
     display: flex;
     align-items: center;
     margin-bottom: 2%;
-}f
+    margin-right: 5%;
+}
 
 #econome-money-icon{
     color: var(--light-green);
     font-weight: bold;
 }
 
-.icon-hover:hover {
+.econome-icon-contact{
+    margin-left: 10px;
+}
+
+
+.econome-icon-contact:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     transition: all .2500s ease-in-out; 
@@ -319,8 +330,8 @@ footer{
     align-items:center;
 }
 
-.econome-contact-link{
-    margin: 5px 10px 0 10px;
+.econome-contact-name{
+    margin: 5px 10px 0 5px;
     font-size: 1rem;
     color: var(--dark-blue);
 }

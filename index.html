@@ -42,7 +42,7 @@
                     </span>
                     <img src="./assets/expense.svg" alt="Imagem de Saídas ">
                 </h3>
-                <p>R$ 2.000,00</p>
+                <p>- R$ 2.000,00</p>
             </div>
 
             <div class="card total">
@@ -63,7 +63,7 @@
 
             <a href="#" 
             onclick="Modal.open()"
-            class="botton new"> + Nova Transação</a>
+            class="botton add"> + Nova Transação</a>
 
 
             <table id="data-table">
@@ -170,44 +170,24 @@
 
     <footer>
         <nav class="container">
-            <div class="econome-nav-content">
-                <a href="https://github.com/OliveiraGusta">
+            <div class="econome-nav-content">              
                    <div class="econome-contact-container" >
-                        <img class="icon-hover" src="./assets/github.svg" alt="Imagem do Github">
-                        <p class="econome-contact-link">/OliveiraGusta </p>
+                        <a href="https://github.com/OliveiraGusta">
+                        <img class="econome-icon-contact" src="./assets/github.svg" alt="Imagem do Github">
+
+                        <a href="https://www.linkedin.com/in/oliveiragusta/"></a>
+                        <img class="econome-icon-contact" src="./assets/linkedin.svg" alt="Imagem do Linkedin">
+                        
+                        <p class="econome-contact-name"><b>/OliveiraGusta</b> </p>
                    </div>
-                </a>
 
-                <!--Ajustar nome Sifrão-->
-                <p><a id="econome-money-icon">$</a>Econome<b>ME</b></p>
-
-                <a href="https://www.linkedin.com/in/oliveiragusta/">
-                    <div class="econome-contact-container" >
-                         <img class="icon-hover" src="./assets/linkedin.svg" alt="Imagem do Linkedin">
-                         <p class="econome-contact-link">/OliveiraGusta </p>
-                    </div>
-                 </a>
+                <p><a id="econome-money-icon">$</a>Econome<b>ME</b></p>    
             </div>
         </nav>
     </footer>
 
-    <script>
-        const Modal = {
-            open(){
-               //Abrir Modal
-               //Adicionar a class active ao Modal
-
-               document.querySelector('.modal-overlay')
-               .classList.add('active')
-            },
-            close(){
-              //Fechar o modal
-              //Remover a class active ao Modal 
-              document.querySelector('.modal-overlay')
-               .classList.remove('active')        
-            }
-            
-        }
+    <script src="./scripts.js">
+        
     </script>
 </body>
 
