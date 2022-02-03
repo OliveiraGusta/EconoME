@@ -3,6 +3,7 @@
     --dark-blue:#363f5f;
     --green: #49AA26;
     --light-green: #3dd705;
+    --dark-green: #2d4a22;
     --red: #e92929;
     --white: #f0f2f5;
 }
@@ -32,12 +33,6 @@ body{
 .container{
     width: min(90Vw, 800px);
     margin: auto;
-}
-
-#sifrão{
-    color: var(--light-green);
-    font-weight: bold;
-    
 }
 
 /* Titles ................*/
@@ -109,7 +104,7 @@ button:hover{
 
 /* Header ................*/
 header{
-    background: #2d4a22;
+    background: var(--dark-green);
     padding: 2rem 0 10rem; 
     text-align: center;
 }
@@ -299,12 +294,16 @@ footer{
     display: flex;
     align-items: center;
     margin-bottom: 2%;
+}f
 
+#econome-money-icon{
+    color: var(--light-green);
+    font-weight: bold;
 }
 
-.icon-hover:hover{
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+.icon-hover:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
     transition: all .2500s ease-in-out; 
 }
 
