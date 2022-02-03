@@ -31,8 +31,13 @@ body{
 }
 .container{
     width: min(90Vw, 800px);
-
     margin: auto;
+}
+
+#sifrão{
+    color: var(--light-green);
+    font-weight: bold;
+    
 }
 
 /* Titles ................*/
