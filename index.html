@@ -61,9 +61,7 @@
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
 
-            <a href="#" 
-            onclick="Modal.open()"
-            class="botton add"> + Nova Transação</a>
+            <a href="#" onclick="Modal.open()" class="botton add"> + Nova Transação</a>
 
 
             <table id="data-table">
@@ -76,40 +74,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="description">Venda de Ursinho</td>
-                        <td class="income">R$5.000,00</td>
-                        <td class="date"> 03/02/2022 </td>
-                        <td>
-                            <img src="./assets/minus.svg" alt="Remover transação">
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td class="description">Luz</td>
-                        <td class="expense">-R$ 300,00</td>
-                        <td class="date"> 15/01/2022 </td>
-                        <td>
-                            <img src="./assets/minus.svg" alt="Remover transação">
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td class="description">Criação de Website</td>
-                        <td class="income">R$ 2.000,00</td>
-                        <td class="date"> 21/01/2022 </td>
-                        <td>
-                            <img src="./assets/minus.svg" alt="Remover transação">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Internet</td>
-                        <td class="expense">-R$ 120,00</td>
-                        <td class="date"> 10/01/2022 </td>
-                        <td>
-                            <img src="./assets/minus.svg" alt="Remover transação">
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </section>
@@ -122,47 +87,27 @@
                 <h2>Nova Transação</h2>
                 <form action="">
                     <div class="input-group">
-                        <label 
-                        class="sr-only" 
-                        for="description">Descrição</label>
-                        <input 
-                        type="text" 
-                        id="description" 
-                        name="description" placeholder="Descrição"/>
+                        <label class="sr-only" for="description">Descrição</label>
+                        <input type="text" id="description" name="description" placeholder="Descrição" />
                     </div>
 
                     <div class="input-group">
-                        <label 
-                        class="sr-only" 
-                        for="amount">Valor</label>
-                        <input 
-                        type="number" 
-                        step="0.01" 
-                        id="amount" 
-                        name="amount" 
-                        placeholder="0,00"/>
-                        <small class="help"> 
+                        <label class="sr-only" for="amount">Valor</label>
+                        <input type="number" step="0.01" id="amount" name="amount" placeholder="0,00" />
+                        <small class="help">
                             Use o sinal - (negativo) para despesas e , (virgula) para casa decimais</small>
                     </div>
 
                     <div class="input-group">
-                        <label 
-                        class="sr-only" 
-                        for="date">Data</label>
-                        <input 
-                        type="date" 
-                        id="date" 
-                        name="date" 
-                        placeholder="dd/mm/aaaa"/>
+                        <label class="sr-only" for="date">Data</label>
+                        <input type="date" id="date" name="date" placeholder="dd/mm/aaaa" />
                     </div>
-                    
+
                     <div class="input-group actions">
-                        <button 
-                        onclick="Modal.close()"
-                        href="#" class="button cancel"> Cancelar </button>
+                        <button onclick="Modal.close()" href="#" class="button cancel"> Cancelar </button>
                         <button>Adicionar</button>
                     </div>
-                    
+
                 </form>
             </div>
         </div>
@@ -170,24 +115,24 @@
 
     <footer>
         <nav class="container">
-            <div class="econome-nav-content">              
-                   <div class="econome-contact-container" >
-                        <a href="https://github.com/OliveiraGusta" target="_blank">
+            <div class="econome-nav-content">
+                <div class="econome-contact-container">
+                    <a href="https://github.com/OliveiraGusta" target="_blank">
                         <img class="econome-icon-contact" src="./assets/github.svg" alt="Imagem do Github">
-                        </a>
-                        <a href="https://www.linkedin.com/in/oliveiragusta/" target="_blank" >
+                    </a>
+                    <a href="https://www.linkedin.com/in/oliveiragusta/" target="_blank">
                         <img class="econome-icon-contact" src="./assets/linkedin.svg" alt="Imagem do Linkedin">
-                        </a>
-                        <p class="econome-contact-name"><b>/OliveiraGusta</b> </p>
-                   </div>
+                    </a>
+                    <p class="econome-contact-name"><b>/OliveiraGusta</b> </p>
+                </div>
 
-                <p><a id="econome-money-icon">$</a>Econo<b>ME</b></p>    
+                <p><a id="econome-money-icon">$</a>Econo<b>ME</b></p>
             </div>
         </nav>
     </footer>
 
     <script src="./scripts.js">
-        
+
     </script>
 </body>
 
