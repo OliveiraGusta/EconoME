@@ -57,7 +57,7 @@ a::hover{
 }
 
 button{
-    width: 100%;
+    
     height: 50px;
 
     border: none;
@@ -84,16 +84,14 @@ button:hover{
 }
 
 .button.cancel{
-
-
     color: var(--red);
     border: 2px var(--red) solid;
     border-radius: 0.25rem;
 
     height: 50px; 
+    width: 45%;
     background:var(--white);
     
-
     display: flex;
     align-items: center;
     justify-content: center;

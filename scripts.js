@@ -33,6 +33,11 @@ const Transaction = {
          amount: 200000,
          date: '21/01/2022'
       },
+      ,{
+         description: 'Energia',
+         amount: -50000,
+         date: '07/02/2022'
+      },
    
    ],
 
@@ -146,7 +151,50 @@ const Utils = {
    }
 }
 
+const Form={
+   description: document.querySelector('input#description'),
+   amount: document.querySelector('input#amount'),
+   date: document.querySelector('input#date'),
 
+   getValues(){
+      return {
+         description: Form.description.value,
+         amount: Form.description.value,
+         date: Form.description.value
+      }
+   },
+   validateFields(){
+      const {description, amount, date } = Form.getValues()
+
+      if(description.trim() === "" || 
+         amount.trim() === "" ||
+         date.trim() === ""){
+            throw new Error("Por favor, preencha todos os campos")
+      }
+     
+   },
+
+   submit(event){
+      event.preventDefault()
+
+      try{  
+         //verificar se as informaçoes forma preenchidas
+         Form.validateFields()
+
+         // formatar os dados para salvar
+         //Form.formatData()
+         
+         // salvar
+         // Informaçoes apagadas
+         // fechar modal
+         // atualizar
+
+      } catch (error){
+         alert(error.message)
+      }
+    
+   }
+}
 
 const App = {
    init() {
@@ -165,12 +213,5 @@ const App = {
 }
 
 App.init()
-
-
-
-
-
-
-
 
 
