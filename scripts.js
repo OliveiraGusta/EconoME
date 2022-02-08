@@ -17,37 +17,34 @@ const Modal = {
    }
 }
 
-const transactions = [
-   {
-      id: 1,
-      description: 'Venda de Ursinho',
-      amount: 500000,
-      date: '03/02/2022'
-   },
-   {
-      id: 2,
-      description: 'Luz',
-      amount: -30000,
-      date: '15/01/2022'
-   },
-   {
-      id: 3,
-      description: 'Criação de Website',
-      amount: 200000,
-      date: '21/01/2022'
-   },
-   {
-      id: 4,
-      description: 'Internet',
-      amount: 12000,
-      date: '10/01/2022'
-   },
-]
-
 const Transaction = {
-   all: transactions,
-   add(transaction){
+   all: [{
+         description: 'Venda de Ursinho',
+         amount: 500000,
+         date: '03/02/2022'
+      },
+      {
+         description: 'Luz',
+         amount: -30000,
+         date: '15/01/2022'
+      },
+      {
+         description: 'Criação de Website',
+         amount: 200000,
+         date: '21/01/2022'
+      },
+   
+   ],
+
+   add(transaction) {
       Transaction.all.push(transaction)
+
+      App.reload()
+
+   },
+
+   remove(index) {
+      Transaction.all.splice(index, 1)
 
       App.reload()
 
@@ -58,20 +55,20 @@ const Transaction = {
       // Pegar valores das transaçoes
       // para cada transaction
       Transaction.all.forEach(transaction => {
-          // Verificar se a transação > 0
-        if(transaction.amount > 0 ){
-          //Somar a uma variavel e returnar a varivel
+         // Verificar se a transação > 0
+         if (transaction.amount > 0) {
+            //Somar a uma variavel e returnar a varivel
             income += transaction.amount;
          }
       })
       return income;
-              
+
    },
 
    expenses() {
       let expense = 0;
       Transaction.all.forEach((transaction) => {
-        if(transaction.amount < 0 ){
+         if (transaction.amount < 0) {
             expense += transaction.amount;
          }
       })
@@ -90,49 +87,50 @@ const DOM = {
    addTransaction(transaction, index) {
       const tr = document.createElement('tr')
       tr.innerHTML = DOM.innerHTMLTransaction(transaction)
-      
+
       DOM.transactionsContainer.appendChild(tr)
-      
-      
+
+
    },
-   
+
    innerHTMLTransaction(transaction) {
       const CSSclass = transaction.amount > 0 ? "income" : "expense"
 
       const amount = Utils.formatCurrency(transaction.amount)
 
       const html = `      
-            <td class="description">${transaction.description}</td>
-            <td class="${CSSclass}">${amount}</td>
-            <td class="date">${transaction.date} </td>
-            <td>
-               <img src="./assets/minus.svg" alt="Remover transação">
-            </td> 
-            `
+               <td class="description">${transaction.description}</td>
+               <td class="${CSSclass}">${amount}</td>
+               <td class="date">${transaction.date} </td>
+               <td>
+                  <img src="./assets/minus.svg" alt="Remover transação">
+               </td> 
+               `
 
       return html
    },
 
    updateBalance() {
       document
-      .getElementById('incomeDisplay')
-      .innerHTML = Utils.formatCurrency(Transaction.incomes())
+         .getElementById('incomeDisplay')
+         .innerHTML = Utils.formatCurrency(Transaction.incomes())
 
       document
-      .getElementById('expenseDisplay')
-      .innerHTML = Utils.formatCurrency(Transaction.expenses())
-   
+         .getElementById('expenseDisplay')
+         .innerHTML = Utils.formatCurrency(Transaction.expenses())
+
       document
-      .getElementById('totalDisplay')
-      .innerHTML = Utils.formatCurrency(Transaction.total())
+         .getElementById('totalDisplay')
+         .innerHTML = Utils.formatCurrency(Transaction.total())
    },
-   clearTransactions(){
-      DOM.transactionsContainer.innerHTML = ""
+
+   clearTransactions() {
+      DOM.transactionsContainer.innerHTML = " "
    }
 }
 
-const Utils ={
-   formatCurrency(value){
+const Utils = {
+   formatCurrency(value) {
       const signal = Number(value) < 0 ? "-" : ""
 
       value = String(value).replace(/\D/g, "")
@@ -141,25 +139,27 @@ const Utils ={
 
       value = value.toLocaleString("pt-BR", {
          style: "currency",
-         currency:"BRL"
+         currency: "BRL"
       })
 
       return signal + value
    }
 }
 
-const App = {
-   init(){
-      
-Transaction.all.forEach(transaction => {
-   DOM.addTransaction(transaction)
-})
 
-DOM.updateBalance()
+
+const App = {
+   init() {
+
+      Transaction.all.forEach(transaction => {
+         DOM.addTransaction(transaction)
+      })
+
+      DOM.updateBalance()
 
    },
-   reload(){
-      Dom.clearTransactions
+   reload() {
+      DOM.clearTransactions()
       App.init()
    },
 }
@@ -167,12 +167,7 @@ DOM.updateBalance()
 App.init()
 
 
-Transaction.add({
-   id: 30,
-   description: 'TO AQUI',
-   amount: 200,
-   date:'05/02/2003'
-})
+
 
 
 
