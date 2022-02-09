@@ -18,14 +18,15 @@ const Modal = {
 }
 
 const Transaction = {
-   all: [{
+   all: [
+      {
          description: 'Venda de Ursinho',
          amount: 500000,
          date: '03/02/2022'
       },
       {
          description: 'Luz',
-         amount: -30000,
+         amount: -35000,
          date: '15/01/2022'
       },
       {
@@ -135,6 +136,12 @@ const DOM = {
 }
 
 const Utils = {
+   formatAmount(value){
+      console.log(value)
+
+      
+   },
+
    formatCurrency(value) {
       const signal = Number(value) < 0 ? "-" : ""
 
@@ -163,6 +170,7 @@ const Form={
          date: Form.description.value
       }
    },
+
    validateFields(){
       const {description, amount, date } = Form.getValues()
 
@@ -174,15 +182,22 @@ const Form={
      
    },
 
+   formatValues(){
+      let {description, amount, date } = Form.getValues()
+   
+      amount = Utils.formatAmount(amount)
+      console.log(amount)
+
+   },
    submit(event){
       event.preventDefault()
 
       try{  
          //verificar se as informaçoes forma preenchidas
-         Form.validateFields()
+         //Form.validateFields()
 
          // formatar os dados para salvar
-         //Form.formatData()
+         Form.formatValues()
          
          // salvar
          // Informaçoes apagadas
