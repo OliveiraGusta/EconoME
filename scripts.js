@@ -137,8 +137,15 @@ const DOM = {
 
 const Utils = {
    formatAmount(value){
-      console.log(value)
+      value = Number(value) * 100
 
+      return value
+
+   },
+
+   formatDate(date){
+      const spliteddDate = date.split("-")
+      return `${spliteddDate [2]}/${spliteddDate [1]}/${spliteddDate [0]}`
       
    },
 
@@ -150,8 +157,8 @@ const Utils = {
       value = Number(value) / 100
 
       value = value.toLocaleString("pt-BR", {
-         style: "currency",
-         currency: "BRL"
+          style: "currency",
+          currency: "BRL"
       })
 
       return signal + value
@@ -166,8 +173,8 @@ const Form={
    getValues(){
       return {
          description: Form.description.value,
-         amount: Form.description.value,
-         date: Form.description.value
+         amount: Form.amount.value,
+         date: Form.date.value
       }
    },
 
@@ -183,12 +190,18 @@ const Form={
    },
 
    formatValues(){
-      let {description, amount, date } = Form.getValues()
-   
+      let { description, amount, date } = Form.getValues()
+        
       amount = Utils.formatAmount(amount)
-      console.log(amount)
+      date = Utils.formatDate(date)
 
+      return{
+         description,
+         amount,
+         date
+      }
    },
+
    submit(event){
       event.preventDefault()
 
@@ -197,9 +210,9 @@ const Form={
          //Form.validateFields()
 
          // formatar os dados para salvar
-         Form.formatValues()
-         
+         const transaction = Form.formatValues()
          // salvar
+         
          // Informaçoes apagadas
          // fechar modal
          // atualizar
