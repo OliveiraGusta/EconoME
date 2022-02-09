@@ -17,30 +17,19 @@ const Modal = {
    }
 }
 
+const Storage = {
+   get(){
+     return JSON.parse(localStorage.getItem("econome:transactions")) || []
+   },
+
+   set(transactions){
+      localStorage.setItem("econome:transactions", JSON.stringify(transactions))
+   }
+
+}
+
 const Transaction = {
-   all: [
-      {
-         description: 'Venda de Ursinho',
-         amount: 500000,
-         date: '03/02/2022'
-      },
-      {
-         description: 'Luz',
-         amount: -35000,
-         date: '15/01/2022'
-      },
-      {
-         description: 'Criação de Website',
-         amount: 200000,
-         date: '21/01/2022'
-      },
-      ,{
-         description: 'Energia',
-         amount: -50000,
-         date: '07/02/2022'
-      },
-   
-   ],
+   all: Storage.get(),
 
    add(transaction) {
       Transaction.all.push(transaction)
@@ -233,15 +222,19 @@ const Form={
    }
 }
 
+
 const App = {
    init() {
-
       Transaction.all.forEach(DOM.addTransaction)
+
       DOM.updateBalance()
+
+      Storage.set(Transaction.all)
 
    },
    reload() {
       DOM.clearTransactions()
+
       App.init()
    },
 }
